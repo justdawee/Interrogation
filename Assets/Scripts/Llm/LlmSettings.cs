@@ -9,13 +9,13 @@ namespace Interrogation.Llm
     [Serializable]
     public class LlmSettings
     {
-        // Alternatíva: "gpt-6-sol" (erősebb érvelés). A jelenetbe mentett érték felülírja ezt.
-        public string model = "gpt-6-luna";
+        // Az A/B mérés alapján: a sol + "none" a leggyorsabb és a legpontosabb. A jelenetbe mentett érték felülírja ezt.
+        public string model = "gpt-6-sol";
 
         public string endpoint = "https://api.openai.com/v1/chat/completions";
 
         // "none" | "low" | "medium" | "high"; üresen a paraméter nem kerül a kérésbe.
-        public string reasoningEffort = "low";
+        public string reasoningEffort = "none";
 
         // Reasoning-modellnél a gondolkodás is ebből fogy: 300-nál a hosszabb promptokon
         // üres maradt a válasz, ezért bőséges a plafon (a költséget a tényleges fogyás adja).
